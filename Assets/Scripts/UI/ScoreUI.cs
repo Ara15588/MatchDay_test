@@ -9,6 +9,9 @@ public class ScoreUI : MonoBehaviour
     private TextMeshProUGUI ScoreText;
     [SerializeField]
     private TextMeshProUGUI RecordText;
+    [SerializeField]
+    private TextMeshProUGUI InstructionsText;
+
 
     [SerializeField]
     private GameObject TotalScore;
@@ -25,7 +28,9 @@ public class ScoreUI : MonoBehaviour
         EventManager.AddListener<EndGameEvent>(SaveAndShowRecord);
 
         currentRecord = PlayerPrefs.GetInt(StaticData.CurrentRecord, 0);
-        RecordText.text = currentRecord.ToString();
+
+        InitializeTexts();
+        
     }
 
 
@@ -33,6 +38,16 @@ public class ScoreUI : MonoBehaviour
     {
         currentScore = 0;
         ScoreText.text = currentScore.ToString();
+    }
+
+    void InitializeTexts()
+    {
+        RecordText.text = currentRecord.ToString();
+#if UNITY_ANDROID || UNITY_IOS
+        InstructionsText.text = StaticData.InstructionsMobile;
+#else
+        InstructionsText.text = StaticData.InstructionsStandalone;
+#endif
     }
 
     //Increases the score amount and updates the text property

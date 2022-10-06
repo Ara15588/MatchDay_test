@@ -6,6 +6,8 @@ public static class StaticData
 {
     public const string Ball = "Ball";
     public const string CurrentRecord = "CurrentRecord";
+    public const string InstructionsMobile = "Tap hold to move the hoop";
+    public const string InstructionsStandalone = "Left click to move the hoop";
 
     public static List<Color> BallBounceColors = new List<Color> { Color.black, new Color(0.3f, 0.3f, 0.3f), new Color(0.75f, 0.75f, 0.75f), Color.white };
 

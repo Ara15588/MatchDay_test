@@ -6,9 +6,11 @@ public class InputManager : MonoBehaviour
 {
     [SerializeField]
     private Transform inputTarget;
+    [SerializeField]
+    private Rigidbody2D rigidBodyTarget;
 
     [SerializeField]
-    private float inputSensitivity = 5;
+    private float inputSensitivity = 500;
 
     public float minimumX;
     public float maximumX;
@@ -56,13 +58,18 @@ public class InputManager : MonoBehaviour
             
             if (inputTarget.position.x < minimumX && lastFrameDirection == -1 || inputTarget.position.x > maximumX && lastFrameDirection == 1
                 || Mathf.Abs(inputTarget.position.x - NewPosition.x) < 10f)
-                return;
+                lastFrameDirection = 0;
+
 
             pos += inputTarget.right * lastFrameDirection * inputSensitivity;
 
 
             pos.y = inputTarget.position.y;
-            inputTarget.position = pos;
+            rigidBodyTarget.velocity = inputSensitivity * lastFrameDirection * inputTarget.right;
+        }
+        else if(Input.GetMouseButtonUp(0))
+        {
+            rigidBodyTarget.velocity = Vector2.zero;
         }
     }
 
@@ -72,6 +79,6 @@ public class InputManager : MonoBehaviour
         minimumX = Screen.width / 10;
         maximumX = Screen.width - minimumX;
 
-        inputSensitivity = 5 * Screen.width / 1000f;
+        inputSensitivity = 300 * Screen.width / 1000f;
     }
 }

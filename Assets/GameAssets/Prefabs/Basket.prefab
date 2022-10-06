@@ -301,6 +301,7 @@ GameObject:
   - component: {fileID: 8533571537158569568}
   - component: {fileID: 8533571537158569571}
   - component: {fileID: 1532490334939433781}
+  - component: {fileID: 6069110583468129306}
   m_Layer: 8
   m_Name: Basket
   m_TagString: Untagged
@@ -362,6 +363,27 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!50 &6069110583468129306
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8533571537158569575}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 100
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 6
 --- !u!1 &8533571537759593716
 GameObject:
   m_ObjectHideFlags: 0

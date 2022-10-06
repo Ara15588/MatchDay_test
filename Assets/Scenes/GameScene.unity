@@ -407,9 +407,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputTarget: {fileID: 1144792818}
-  inputSensitivity: 5
+  rigidBodyTarget: {fileID: 1941939657}
+  inputSensitivity: 500
   minimumX: 0
   maximumX: 0
+--- !u!50 &1941939657 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 7471962999558119965, guid: c142530e98ddf30489c7ee37211cc4ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 3713342314774821110}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2070137522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1483309320875075847, guid: c142530e98ddf30489c7ee37211cc4ed,
+    type: 3}
+  m_PrefabInstance: {fileID: 3713342314774821110}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3713342314774821110
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -450,32 +469,37 @@ PrefabInstance:
     - target: {fileID: 1483309320875075847, guid: c142530e98ddf30489c7ee37211cc4ed,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 30
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1483309320875075847, guid: c142530e98ddf30489c7ee37211cc4ed,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1483309320875075847, guid: c142530e98ddf30489c7ee37211cc4ed,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1483309320875075847, guid: c142530e98ddf30489c7ee37211cc4ed,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1483309320875075847, guid: c142530e98ddf30489c7ee37211cc4ed,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1483309320875075847, guid: c142530e98ddf30489c7ee37211cc4ed,
         type: 3}
       propertyPath: m_text
-      value: Left mouse click move the hoop
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1483309320875075847, guid: c142530e98ddf30489c7ee37211cc4ed,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 36
       objectReference: {fileID: 0}
     - target: {fileID: 1843166217996194984, guid: c142530e98ddf30489c7ee37211cc4ed,
         type: 3}
@@ -487,6 +511,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1894415412}
+    - target: {fileID: 2485773725093180294, guid: c142530e98ddf30489c7ee37211cc4ed,
+        type: 3}
+      propertyPath: InstructionsText
+      value: 
+      objectReference: {fileID: 2070137522}
     - target: {fileID: 3029626528549517950, guid: c142530e98ddf30489c7ee37211cc4ed,
         type: 3}
       propertyPath: m_IsActive
