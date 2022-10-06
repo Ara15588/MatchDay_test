@@ -42,18 +42,20 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetMouseButton(0))
         {
-            Vector3 NewPosition = new Vector3(Input.GetAxis("Mouse X"), 0, 0);
+            Vector3 NewPosition = Input.mousePosition;
             Vector3 pos = inputTarget.position;
             
-            if (NewPosition.x > 0.0f)
+            if (NewPosition.x > pos.x)
             {
                 lastFrameDirection = 1;
             }
-            else if (NewPosition.x < 0.0f)
+            else if (NewPosition.x < pos.x)
             {
                 lastFrameDirection = -1;
             }
-            if (inputTarget.position.x < minimumX && lastFrameDirection == -1 || inputTarget.position.x > maximumX && lastFrameDirection == 1)
+            
+            if (inputTarget.position.x < minimumX && lastFrameDirection == -1 || inputTarget.position.x > maximumX && lastFrameDirection == 1
+                || Mathf.Abs(inputTarget.position.x - NewPosition.x) < 10f)
                 return;
 
             pos += inputTarget.right * lastFrameDirection * inputSensitivity;
