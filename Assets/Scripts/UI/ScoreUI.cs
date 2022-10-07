@@ -21,7 +21,7 @@ public class ScoreUI : MonoBehaviour
     private int currentScore;
     private int currentRecord;
 
-    void Start()
+    private void Start()
     {
         EventManager.AddListener<StartGameEvent>(InitializeScore);
         EventManager.AddListener<BallScoredEvent>(UpdateScoreText);
@@ -30,7 +30,6 @@ public class ScoreUI : MonoBehaviour
         currentRecord = PlayerPrefs.GetInt(StaticData.CurrentRecord, 0);
 
         InitializeTexts();
-        
     }
 
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class InputManager : MonoBehaviour
 {
@@ -56,15 +57,11 @@ public class InputManager : MonoBehaviour
                 lastFrameDirection = -1;
             }
             
-            if (inputTarget.position.x < minimumX && lastFrameDirection == -1 || inputTarget.position.x > maximumX && lastFrameDirection == 1
+            if (EventSystem.current.IsPointerOverGameObject() || inputTarget.position.x < minimumX && lastFrameDirection == -1 || inputTarget.position.x > maximumX && lastFrameDirection == 1
                 || Mathf.Abs(inputTarget.position.x - NewPosition.x) < 10f)
                 lastFrameDirection = 0;
 
 
-            pos += inputTarget.right * lastFrameDirection * inputSensitivity;
-
-
-            pos.y = inputTarget.position.y;
             rigidBodyTarget.velocity = inputSensitivity * lastFrameDirection * inputTarget.right;
         }
         else if(Input.GetMouseButtonUp(0))

@@ -9,9 +9,13 @@ public class GameManager : MonoBehaviour
         Application.targetFrameRate = 60;
     }
 
-
     public void StartGame()
     {
         EventManager.TriggerEvent<StartGameEvent>(null);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }
